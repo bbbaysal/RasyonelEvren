@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0b1120">
+    <title>Rasyonel Evren: Sayı Kaşifleri - 7. Sınıf Matematik</title>
+    
+    <!-- %100 Çevrimdışı ve Harici Bağlantısız Yerel Stiller -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ÜST BİLGİ VE KONTROL ÇUBUĞU (HUD) -->
+    <header class="app-header">
+        <div class="brand-section">
+            <div class="brand-icon">
+                <img src="assets/images/logo.svg" width="36" height="36" alt="Rasyonel Evren Logo">
+            </div>
+            <div>
+                <h1 class="brand-title">Rasyonel Evren</h1>
+                <div class="brand-subtitle">7. Sınıf Matematik Kaşifleri</div>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <div class="hud-pill stars">
+                <span id="total-stars">0 / 12 ⭐</span>
+            </div>
+            <div class="hud-pill score">
+                <span id="total-score">0 Puan</span>
+            </div>
+
+            <!-- Ses Aç/Kapat Butonu -->
+            <button class="btn-icon" id="btn-toggle-sound" title="Sesi Aç/Kapat" aria-label="Sesi Aç/Kapat">
+                <svg id="sound-icon" viewBox="0 0 24 24">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+            </button>
+
+            <!-- Akıllı Tahta İçin Tam Ekran Butonu -->
+            <button class="btn-icon" id="btn-fullscreen" title="Tam Ekran Modu" aria-label="Tam Ekran">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ANA İÇERİK KAPSAYICISI -->
+    <main class="app-container">
+
+        <!-- ===================================================================
+             1. GÖRÜNÜM: ANA MENÜ / BÖLÜM SEÇİM HARİTASI
+             =================================================================== -->
+        <section id="menu-view" class="view-section active">
+            <div class="hero-banner">
+                <div class="hero-badge">
+                    <span>✨ MEB 7. Sınıf Öğretim Programı Uyumlu</span>
+                </div>
+                <h2 class="hero-title">Rasyonel Sayılar Dünyasını Keşfet</h2>
+                <p class="hero-desc">
+                    Tam sayılardan rasyonel sayılara genişle, devirli ondalıkları yakala, terazide dengeleri kur ve gerçek hayat problemlerini adım adım çöz!
+                </p>
+
+                <!-- Oyun Modu Seçici (Bireysel / Sınıf-Akıllı Tahta) -->
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="individual">
+                        👤 Bireysel Keşif
+                    </button>
+                    <button class="mode-btn" data-mode="class">
+                        👥 Sınıf / Akıllı Tahta Modu
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 ANA KAZANIM MODÜL KARTLARI -->
+            <div class="modules-grid">
+                
+                <!-- KART 1: MAT.7.1.1 -->
+                <div class="module-card c-blue" data-module="m1">
+                    <div>
+                        <div class="module-header">
+                            <span class="module-badge">MAT.7.1.1 • DİNAMİK</span>
+                            <div class="module-stars" id="stars-m1">☆☆☆</div>
+                        </div>
+                        <div class="module-icon-wrap">
+                            <img src="assets/images/module1_numberline.svg" width="40" height="40" alt="Sayı Doğrusu Büyüteci">
+                        </div>
+                        <h3 class="module-title">Sayı Doğrusu Büyüteci</h3>
+                        <p class="module-desc">
+                            Her oyunda rastgele rasyonel sayılar üretilir. Tam sayıları rasyonel sayılara genişlet, büyüteçle aralıkları böl ve mutlak değeri ölç!
+                        </p>
+                    </div>
+                    <div class="module-footer">
+                        <span class="module-levels-tag">Sonsuz / Rastgele Mod</span>
+                        <span class="btn-start-module">Başla →</span>
+                    </div>
+                </div>
+
+                <!-- KART 2: MAT.7.1.2 -->
+                <div class="module-card c-amber" data-module="m2">
+                    <div>
+                        <div class="module-header">
+                            <span class="module-badge">MAT.7.1.2 • DİNAMİK</span>
+                            <div class="module-stars" id="stars-m2">☆☆☆</div>
+                        </div>
+                        <div class="module-icon-wrap">
+                            <img src="assets/images/module2_lab.svg" width="40" height="40" alt="Ondalık ve Devir Lab">
+                        </div>
+                        <h3 class="module-title">Ondalık & Devir Lab</h3>
+                        <p class="module-desc">
+                            Rastgele üretilen kesirlerde uzun bölme yap, kalan tekrarını yakala, devir alarmını çal ve devir çizgisini parmağınla çek!
+                        </p>
+                    </div>
+                    <div class="module-footer">
+                        <span class="module-levels-tag">Sonsuz / Rastgele Mod</span>
+                        <span class="btn-start-module">Başla →</span>
+                    </div>
+                </div>
+
+                <!-- KART 3: MAT.7.1.3 -->
+                <div class="module-card c-emerald" data-module="m3">
+                    <div>
+                        <div class="module-header">
+                            <span class="module-badge">MAT.7.1.3 • DİNAMİK</span>
+                            <div class="module-stars" id="stars-m3">☆☆☆</div>
+                        </div>
+                        <div class="module-icon-wrap">
+                            <img src="assets/images/module3_balance.svg" width="40" height="40" alt="Rasyonel Terazi">
+                        </div>
+                        <h3 class="module-title">Rasyonel Terazi</h3>
+                        <p class="module-desc">
+                            Her defasında yeni rasyonel sayı çiftleri kefelere konur. Payda eşitleme veya bütüne yakınlık akıl yürütmesiyle sırala!
+                        </p>
+                    </div>
+                    <div class="module-footer">
+                        <span class="module-levels-tag">Sonsuz / Rastgele Mod</span>
+                        <span class="btn-start-module">Başla →</span>
+                    </div>
+                </div>
+
+                <!-- KART 4: MAT.7.1.4 -->
+                <div class="module-card c-purple" data-module="m4">
+                    <div>
+                        <div class="module-header">
+                            <span class="module-badge">MAT.7.1.4 • DİNAMİK</span>
+                            <div class="module-stars" id="stars-m4">☆☆☆</div>
+                        </div>
+                        <div class="module-icon-wrap">
+                            <img src="assets/images/module4_detective.svg" width="40" height="40" alt="Gerçek Yaşam Dedektifi">
+                        </div>
+                        <h3 class="module-title">Gerçek Yaşam Dedektifi</h3>
+                        <p class="module-desc">
+                            Parametrik değişen günlük hayat problemleri: Verilenleri seç, şekil modelini boya, işlemi yap ve sağlama ile doğrula!
+                        </p>
+                    </div>
+                    <div class="module-footer">
+                        <span class="module-levels-tag">Sonsuz / Rastgele Mod</span>
+                        <span class="btn-start-module">Başla →</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             2. GÖRÜNÜM: MODÜL 1 (SAYI DOĞRUSU BÜYÜTECİ)
+             =================================================================== -->
+        <section id="module1-view" class="view-section"></section>
+
+        <!-- ===================================================================
+             3. GÖRÜNÜM: MODÜL 2 (ONDALIK & DEVİR LABORATUVARI)
+             =================================================================== -->
+        <section id="module2-view" class="view-section"></section>
+
+        <!-- ===================================================================
+             4. GÖRÜNÜM: MODÜL 3 (RASYONEL TERAZİ)
+             =================================================================== -->
+        <section id="module3-view" class="view-section"></section>
+
+        <!-- ===================================================================
+             5. GÖRÜNÜM: MODÜL 4 (GERÇEK YAŞAM DEDEKTİFİ)
+             =================================================================== -->
+        <section id="module4-view" class="view-section"></section>
+
+    </main>
+
+    <!-- KUTLAMA VE BÖLÜM BİTİRME MODALI -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-icon-big success">
+                <img src="assets/images/trophy.svg" width="56" height="56" alt="Kutlama Kupası">
+            </div>
+            <h3 class="modal-title" id="modal-title">Görev Başarıyla Tamamlandı!</h3>
+            <p class="modal-message" id="modal-message">
+                Tebrikler! Tüm adımları doğru şekilde geçtin ve yıldızları topladın.
+            </p>
+            <div class="modal-actions">
+                <button class="action-btn btn-primary" id="modal-btn-close">
+                    Harika, Devam Et!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- KONFETİ CANVAS -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- JAVASCRIPT MOTORLARI (Yerel & Sıfır Bağımlılık) -->
+    <script src="js/audio.js"></script>
+    <script src="js/numberline.js"></script>
+    <script src="js/lab.js"></script>
+    <script src="js/comparison.js"></script>
+    <script src="js/problems.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

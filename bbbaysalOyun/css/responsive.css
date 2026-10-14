@@ -1,0 +1,199 @@
+/* ==========================================================================
+   RASYONEL EVREN - DUYARLILIK VE AKILLI TAHTA STİLLERİ (responsive.css)
+   Akıllı Tahta (FullHD / 4K) & Mobil / Tablet Ergonomisi
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. AKILLI TAHTA MODU (Geniş Dokunmatik Ekranlar: >= 1200px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+    .app-container {
+        padding: 30px 40px;
+    }
+
+    .brand-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .modules-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+    }
+
+    .module-card {
+        padding: 32px 26px;
+    }
+
+    .action-btn {
+        padding: 16px 36px;
+        font-size: 1.15rem;
+    }
+
+    .option-btn {
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+
+    .target-fraction {
+        font-size: 3rem;
+        padding: 12px 36px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. ORTA ÖLÇEK / TABLET (768px - 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lab-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBİL DİKEY / KÜÇÜK EKRANLAR (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .app-header {
+        padding: 10px 14px;
+    }
+
+    .brand-title {
+        font-size: 1rem;
+    }
+
+    .brand-subtitle {
+        display: none;
+    }
+
+    .hud-pill {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .hud-pill span:not(#total-stars):not(#total-score) {
+        display: none;
+    }
+
+    .app-container {
+        padding: 16px 12px 40px 12px;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+    }
+
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .game-play-area {
+        padding: 18px 14px;
+        min-height: 420px;
+    }
+
+    .target-fraction {
+        font-size: 2rem;
+        padding: 8px 18px;
+    }
+
+    .numberline-canvas-wrap {
+        height: 160px;
+    }
+
+    .numberline-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .option-btn {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .division-board {
+        font-size: 1rem;
+        padding: 14px;
+        overflow-x: auto;
+    }
+
+    .division-header-wrap {
+        font-size: 1.2rem;
+    }
+
+    .comparison-symbols-dock {
+        gap: 10px;
+    }
+
+    .symbol-choice-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+    }
+
+    .problem-story-text {
+        font-size: 1.05rem;
+    }
+
+    .problem-tabs {
+        padding-bottom: 4px;
+    }
+
+    .problem-tab {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .modal-card {
+        padding: 24px 18px;
+    }
+
+    .modal-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. TAM EKRAN (FULLSCREEN) ÖZEL AYARLARI
+   -------------------------------------------------------------------------- */
+:fullscreen, :-webkit-full-screen {
+    background-color: var(--bg-main);
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* --------------------------------------------------------------------------
+   5. ERİŞİLEBİLİRLİK & DOKUNMATİK TEPKİ AYARLARI
+   -------------------------------------------------------------------------- */
+button, .module-card, .fraction-strip-cell, .option-btn, .symbol-choice-btn {
+    touch-action: manipulation;
+}
+
+@media (hover: hover) {
+    .btn-icon:hover, .action-btn:hover, .option-btn:hover {
+        cursor: pointer;
+    }
+}
